@@ -5,6 +5,8 @@ import illustrator.structures.Segment
 import illustrator.structures.Shape
 
 object Transforms {
+  
+  // Combine shapes into a single shape.
   def combine(shapes: Shape*): Shape = {
     val segmentArrays = shapes.map(
       (shape: Shape) => {
@@ -12,6 +14,8 @@ object Transforms {
       }
     )
 
+    // Create a new shape that contains all of the segments from all of the
+    // input shapes.
     Shape(
       segmentArrays.reduce(
         (leftSegments: Array[Segment], rightSegments: Array[Segment]) => {
@@ -21,6 +25,7 @@ object Transforms {
     )
   }
 
+  // Move a shape along the x and y axes.
   def translate(shape: Shape, deltaX: Int, deltaY: Int): Shape = {
     Shape(
       shape.segments.map(

@@ -5,10 +5,13 @@ import illustrator.structures.Segment
 import illustrator.structures.Shape
 
 object Shapes {
+
+  // Create a line from the origin to (width, height).
   def createLine(width: Int, height: Int): Shape = {
     Shape(Array(Segment(Point(0, 0), Point(width, height))))
   }
 
+  // Create a triangle with a base width and specified height.
   def createTriangle(base: Int, height: Int): Shape = {
     Shape(
       Array(
@@ -19,6 +22,7 @@ object Shapes {
     )
   }
 
+  // Create a rectangle with a specified width and height.
   def createRectangle(width: Int, height: Int): Shape = {
     Shape(
       Array(
@@ -30,6 +34,7 @@ object Shapes {
     )
   }
 
+  // Create an ugly tree.
   def createTree(height: Int): Shape = {
     Shape(
       Array(
